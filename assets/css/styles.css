@@ -15,9 +15,9 @@
   --mb-0-5: 0.5rem;
   --mb-0-75: 0.75rem;
   --mb-1: 1rem;
-  --mb-1-25: 0.25rem;
-  --mb-1-5: 0.5rem;
-  --mb-1-75: 0.75rem;
+  --mb-1-25: 1.25rem;
+  --mb-1-5: 1.5rem;
+  --mb-1-75: 1.75rem;
   --mb-2: 2rem;
   --mb-3: 3rem;
   --border-radius: 4px;
@@ -28,6 +28,14 @@
 }
 body {
   font-family: var(--font-primary);
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
 }
 .login {
   width: 100%;
@@ -140,13 +148,88 @@ body {
 .text-left {
   text-align: left;
 }
+.value {
+  color: var(--very-light-pink);
+  font-size: var(--font-big);
+  margin: var(--mb-0-5) 0 var(--mb-2) 0;
+}
+.cards-container {
+  --card-size: 15rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--card-size));
+  gap: 1.5rem;
+  place-content: center;
+}
+.product-card {
+  width: (--card-size);
+}
+.product-card img {
+  width: 100%;
+  height: (--card-size);
+  border-radius: var(--border-radius);
+  object-fit: cover;
+}
+.product-card__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--mb-0-75);
+}
+.product-card__body figure {
+  margin: 0;
+}
+.product-card__body figure img {
+  width: 2rem;
+  height: 2rem;
+}
+.product-card__body div p:nth-child(1) {
+  font-weight: 700;
+  font-size: var(--font-regular);
+  margin-top: 0;
+  margin-bottom: var(--mb-0-25);
+}
+.product-card__body div p:nth-child(2) {
+  font-size: var(--font-small);
+  margin-top: 0;
+  margin-bottom: 0;
+  color: var(--very-light-pink);
+}
+.drop-down-submenu {
+  width: 10rem;
+  height: auto;
+  border: 1px solid var(--very-light-pink);
+  border-radius: var(--border-radius);
+  padding: var(--mb-1-25) var(--mb-1-25) 0 var(--mb-1-25);
+}
+.drop-down-submenu ul li {
+  text-align: end;
+  font-weight: 700;
+}
+.drop-down-submenu ul li:last-child {
+  padding-top: var(--mb-1-25);
+  border-top: 1px solid var(--very-light-pink);
+  font-weight: 400;
+}
+.drop-down-submenu ul li:last-child a {
+  color: var(--hospital-green);
+  font-size: var(--font-small);
+}
+.drop-down-submenu ul li a {
+  color: var(--black);
+  font-size: var(--font-regular);
+  display: inline-block;
+  margin-bottom: var(--mb-1-25);
+}
 @media (max-width: 640px) {
   .logo {
     display: block;
   }
   .btn-sign-up {
     position: absolute;
-    bottom: 1.25rem;
+    bottom: var(--mb-1-25);
     width: 13rem;
+  }
+  .cards-container {
+    --card-size: 8.75rem;
   }
 }
